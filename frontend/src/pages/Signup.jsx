@@ -7,13 +7,13 @@ const API_BASE =
   import.meta.env.VITE_API_BASE?.replace(/\/$/, "") ||
   "http://localhost:4000";
 
-export default function Login() {
+export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const navigate = useNavigate(); // kept, unused on purpose
+  const navigate = useNavigate(); // intentionally unused
 
   const submit = async (e) => {
     e.preventDefault();
@@ -29,14 +29,14 @@ export default function Login() {
 
       const res = await axios.post(`${API_BASE}/api/auth/login`, {
         email,
-        password
+        password,
       });
 
       // store auth info
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.user.role);
 
-      // ✅ FORCE LEAVE LOGIN PAGE (THIS IS THE FIX)
+      // redirect AFTER login
       if (res.data.user.role === "admin") {
         window.location.replace("/admin");
       } else {
@@ -117,4 +117,3 @@ export default function Login() {
     </div>
   );
 }
-
