@@ -2,7 +2,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Report from "./pages/Report";
-import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import Admin from "./pages/Admin";
 import Dashboard from "./pages/Dashboard";
 import "./App.css";
@@ -14,6 +14,7 @@ export default function App() {
         <h1 className="app-title">Disease Tracker</h1>
 
         <nav className="app-nav">
+          <Link to="/dashboard" className="nav-link">Dashboard</Link>
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/report" className="nav-link">Report</Link>
           <Link to="/login" className="nav-link">Signup</Link>
@@ -25,7 +26,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/report" element={<Report />} />
-          <Route path="/login" element={<Login />} />
+         <Route path="/login" element={<Signup />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
