@@ -39,7 +39,15 @@ export default function Chatbot() {
       {/* Floating Icon */}
       {!open && (
         <div style={styles.icon} onClick={() => setOpen(true)}>
-          <img src="/chatbot.png" alt="Chatbot" style={styles.iconImg} />
+          <img
+            src="/chat.png"
+            alt="Chatbot"
+            style={{
+              ...styles.iconImg,
+              transform: "scale(1.5)" 
+            }}
+          />
+
         </div>
       )}
 

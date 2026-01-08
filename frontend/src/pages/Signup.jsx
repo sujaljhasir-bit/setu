@@ -71,7 +71,7 @@ export default function Signup() {
       </div>
 
       <div className="auth-right">
-        <h2 className="title">Log In</h2>
+        <h2 className="title">SignUp</h2>
 
         <div className="social-buttons">
           <button className="social" disabled>
